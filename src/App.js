@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+import {CityContextProvider}  from './contexts/CityContext';
 import './App.css';
+import Header from './components/Header';
+import Api from "./components/Api";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CityContextProvider>
+      <Header />
+      <Api />
+      </CityContextProvider>
+      
     </div>
   );
 }
