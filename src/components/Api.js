@@ -43,10 +43,9 @@ const Api =() => {
         <div style={{backgroundImage: city.background}}>
         <CardGroup className="mx-5 mt-3" > 
             {weather.daily.map((data,index)=> 
-                    //  border={ ? 'danger': 'light'}
             <Card key={index} border="light" border={new Date(data.dt*1000).toDateString()===tarih.toDateString() ? "danger" : "secondary"} >
 
-                <div>{new Date(data.dt*1000).toDateString()}</div>
+                {/* <div>{new Date(data.dt*1000).toDateString()}</div> */}
               
                 <Card.Title className="text-muted justify-content-center d-flex  ">
                  {

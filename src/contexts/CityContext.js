@@ -343,8 +343,7 @@ export const CityContextProvider = ({children}) => {
             "northeast_lat": 41.320786,
             "northeast_long": 29.456456,
             "southwest_lat": 40.80275,
-            "southwest_long": 27.971307,
-            "background" :"https://i.pinimg.com/originals/dd/32/28/dd32289c778104101c9595a2b76d9281.jpg"
+            "southwest_long": 27.971307
 
           },
           {
