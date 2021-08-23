@@ -13,6 +13,7 @@ const Header =() => {
                 setCity(cities[i]);
             }
         }
+        
     }
 
     console.log(city.name)

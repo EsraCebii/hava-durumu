@@ -35,26 +35,36 @@ const Api =() => {
 
     const gunler = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-        console.log(weather)
+    
+    var tarih = new Date();
+      console.log(tarih.toDateString())
 
        return (
-        <CardGroup className="mx-5 mt-3" >      
+        <div style={{backgroundImage: city.background}}>
+        <CardGroup className="mx-5 mt-3" > 
             {weather.daily.map((data,index)=> 
-                     
-            <Card key={index} border="light" className="px-2">
-                <Card.Title className="text-muted justify-content-center d-flex ">
+                    //  border={ ? 'danger': 'light'}
+            <Card key={index} border="light" border={new Date(data.dt*1000).toDateString()===tarih.toDateString() ? "danger" : "secondary"} >
+
+                <div>{new Date(data.dt*1000).toDateString()}</div>
+              
+                <Card.Title className="text-muted justify-content-center d-flex  ">
                  {
                  gunler[new Date(data.dt* 1000).getDay()]}
                 </Card.Title>
+                
+                
                 
                 {data.weather.map((data,index)=>
                 <Card.Img key={index} src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`} />)}
 
                 <small className="text-muted justify-content-center d-flex">
                  {parseInt(data.temp.max)}° {parseInt(data.temp.min)}°
-                </small>           
+                </small>   
+
             </Card>)}
         </CardGroup>
+        </div>
     )
 }
 export default Api;
