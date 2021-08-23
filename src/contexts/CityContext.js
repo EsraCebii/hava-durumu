@@ -344,6 +344,7 @@ export const CityContextProvider = ({children}) => {
             "northeast_long": 29.456456,
             "southwest_lat": 40.80275,
             "southwest_long": 27.971307
+
           },
           {
             "plaka": 35,

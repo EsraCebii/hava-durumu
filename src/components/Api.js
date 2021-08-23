@@ -13,7 +13,7 @@ const Api =() => {
     const getWeatherData = async(lat, lon) => {
         const key ="5fb615c6a43f168b947830a9f4eb98cf";
         try {
-        const {data} = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${key}&lang=tr&units=metric`);
+        const {data} = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${key}&units=metric`);
         setWeather(data);
         } catch{
             alert("Veri alınamadı.")
@@ -34,7 +34,8 @@ const Api =() => {
 
 
     const gunler = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-        
+
+        console.log(weather)
 
        return (
         <CardGroup className="mx-5 mt-3" >      
@@ -45,10 +46,10 @@ const Api =() => {
                  {
                  gunler[new Date(data.dt* 1000).getDay()]}
                 </Card.Title>
-                <Card.Text>
-                    {data.weather.map((data,index)=>
-                    <div key={index}>{data.description}</div>)} 
-                </Card.Text>
+                
+                {data.weather.map((data,index)=>
+                <Card.Img key={index} src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`} />)}
+
                 <small className="text-muted justify-content-center d-flex">
                  {parseInt(data.temp.max)}° {parseInt(data.temp.min)}°
                 </small>           

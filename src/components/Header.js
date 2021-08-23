@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
 import CityContext from '../contexts/CityContext';
 import './Header.css';
-import {Dropdown} from "react-bootstrap";
+
 
 const Header =() => {
     const {city,setCity,cities} = useContext(CityContext);
