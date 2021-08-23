@@ -1,6 +1,7 @@
 import React,{useContext} from 'react';
 import CityContext from '../contexts/CityContext';
 import './Header.css';
+import {Dropdown} from "react-bootstrap";
 
 const Header =() => {
     const {city,setCity,cities} = useContext(CityContext);
@@ -14,15 +15,15 @@ const Header =() => {
         }
     }
 
+    console.log(city.name)
     return (
-        <>
-        
-        <select className="select" onChange={hangi} id="mySelect">
+        <div className="drop">
+        <select onChange={()=> hangi()} id="mySelect">
             {cities.map(city => (
                 <option value={city.name} key={city.name}>{city.name}</option> 
             ))}
         </select>
-        </>
+        </div>
     )
 }
 export default Header;

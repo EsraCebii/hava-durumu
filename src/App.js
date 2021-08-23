@@ -7,7 +7,7 @@ import Api from "./components/Api";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <CityContextProvider>
       <Header />
       <Api />
